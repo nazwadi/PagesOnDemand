@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jim Hu (jimhu@tamu.edu)",
+			"Jim Wilson (wilson.jim.r@gmail.com)",
+			"Nazwadi (nazwadi@pm.me)"
+		]
+	},
+	"cite-desc": "Provides mechanism for generating wiki articles on demand."
+}
