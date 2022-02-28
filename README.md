@@ -3,6 +3,8 @@ at http://www.mediawiki.org/wiki/Extension:PagesOnDemand . The original maintain
 left the following email address for questions: jim.hu.biobio@gmail.com
 
 # Pages On Demand
+This is a MediaWiki extension that allows you to generate a new page from a red link.
+
 This project was forked to update it for compatibility on Mediawiki versions >= 1.35.0.
 
 ## Quickstart

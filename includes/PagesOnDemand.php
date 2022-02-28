@@ -28,14 +28,11 @@
  
  Version 0.2 changes redirection method when page is created. Requires MW 1.18 or later because it uses
  requestcontext object to get an output object.
+
+ Version 0.3 updates the hooking mechanism to Hooks::run() and makes the extension compatible with MW 1.35 or later
  */
 
 if ( ! defined( 'MEDIAWIKI' ) ) die();
-
-# Register hooks
-#$wgHooks['ArticleFromTitle'][] = 'wfPagesOnDemand';
-#$wgExtensionMessagesFiles['PagesOnDemand'] = dirname( __FILE__ ) . '/PagesOnDemand.i18n.php';
-
 class PagesOnDemand {
 	/**
 	* Gives extension modules a chance to create pages by exposing the PagesOnDemand hook.

@@ -13,18 +13,8 @@
 
 if ( ! defined( 'MEDIAWIKI' ) ) die();
 
-# Credits
-$wgExtensionCredits['other'][] = array(
-    'name'=>'DemoOnDemand',
-    'author'=>'Jim Wilson &lt;wilson.jim.r@gmail.com&gt;',
-    'description'=>'Demo for PagesOnDemand mechanism for generating wiki articles on demand.',
-    'version'=>'0.2'
-);
-
-
 # Register hooks ('PagesOnDemand' hook is provided by the PagesOnDemand extension).
 $wgHooks['PagesOnDemand'][] = 'DemoOnDemand::wfLoadDemoPageOnDemand';
-
 /**
 * Loads a demo page if the title matches a particular pattern.
 * @param Title title The Title to check or create.
@@ -42,8 +32,10 @@ class DemoOnDemand{
 		$text = 'Wow, we just created a page called ' . $title->getDBkey();
 
 		# Create the Article, supplying the new text
-		$article = new Article($title);
-		$article->doEdit( $text, 'Brand New Demo Page!', EDIT_NEW | EDIT_FORCE_BOT );
+		$user = User::newSystemUser( 'SA_Demo', [ 'steal' => true] );
+		$page = WikiPage::factory( $title );
+		$content = new WikitextContent ( $text );
+		$success = $page->doEditContent($content, $text, 0, false, $user);
 
 		# All done (returning false to kill PoD's wfRunHooks stack)
 		return false;
