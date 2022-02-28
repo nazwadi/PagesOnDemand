@@ -2,14 +2,14 @@
 	"name": "PagesOnDemand",
 	"version": "0.2",
 	"author": [
-        "Jim Hu (jimhu@tamu.edu)",
-        "Jim Wilson (wilson.jim.r@gmail.com)",
+		"Jim Hu (jimhu@tamu.edu)",
+		"Jim Wilson (wilson.jim.r@gmail.com)",
 		"Nazwadi (nazwadi@pm.me)"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:PagesOnDemand",
-	"descriptionmsg": "Provides mechanism for generating wiki articles on demand",
+	"descriptionmsg": "pagesOnDemand-desc",
 	"license-name": "GPL-2.0-or-later",
-	"type": "Parser Hooks",
+	"type": "other",
     "requires": {
         "MediaWiki": ">= 1.35.0"
     },
@@ -28,21 +28,16 @@
 		]
 	},
 	"ResourceModules": {
-		"ext.boilerPlate.foo": {
-			"scripts": [
-				"resources/ext.boilerPlate.js",
-				"resources/ext.boilerPlate.foo.js"
+		"ext.pagesOnDemand": {
+			"localBasePath": "resources/ext.pagesOnDemand",
+			"remoteExtPath": "PagesOnDemand/resources/ext.pagesOnDemand",
+			"dependencies": [],
+			"styles": [],
+			"packageFiles": [
+				"init.js"
 			],
-			"styles": [
-				"resources/ext.boilerPlate.foo.css"
-			]
+			"messages": []
 		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteExtPath": ""
-	},
-	"SpecialPages": {
 	},
 	"manifest_version": 2
 }
